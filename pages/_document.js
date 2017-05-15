@@ -11,7 +11,6 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>My page</title>
-          <link rel="stylesheet" href="/static/variables.css" />
           <link rel="stylesheet" href="/static/tachyons.css" />
           <style>{`
             body {
