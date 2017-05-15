@@ -1,20 +1,8 @@
 {
   "presets": [
-    "env",
-    "react"
+    "next/babel"
   ],
   "plugins": [
-    "transform-object-rest-spread",
-    "transform-class-properties",
-    "transform-runtime",
-    "css-modules-transform"
-  ],
-  "env": {
-    "test": {
-      "presets": [
-        "es2015",
-        "./babel"
-       ]
-    }
-  }
+    ["styled-components", { "ssr": true, "displayName": true, "preprocess": false } ]
+  ]
 }
