@@ -9,9 +9,17 @@ export default class MyDocument extends Document {
     const styleTags = sheet.getStyleElement()
     return (
       <html lang="en">
-        <title>DACapital</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/static/tachyons.css" />
+        <Head>
+          <title>DACapital</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="stylesheet" href="/static/tachyons.css" />
+          <style>{`
+            body {
+              background-color: #1C2541
+            }
+          `}</style>
+          {styleTags}
+        </Head>
         <body>
           <div className='root'>
             {main}
