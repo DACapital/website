@@ -1,12 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import tachyons from 'styled-components-tachyons'
+import Link from 'next/link'
 
 const H1 = styled.h1`
-  ${tachyons}
+  ${(tachyons) => {
+    console.log(tachyons)
+  }}
 `
 
 const Header = styled.div`
+  background-color: var(--white)
   padding: 20px 40px
 `
 
@@ -19,8 +23,11 @@ export default () => (
     <LogoName
       src='/static/logo-name.png'
     />
-    <H1 f1 f_headline_l fw1 i dark-pink>
+    <H1 f1 f_headline_l fw1 i white_60>
       Hello World
     </H1>
+    <Link href="/">
+      Hello World
+    </Link>
   </Header>
 )

@@ -1,3 +1,4 @@
+import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -10,6 +11,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>My page</title>
+          <link rel="stylesheet" href="/static/variables.css" />
+          <link rel="stylesheet" href="/static/tachyons.css" />
           <style>{`
             body {
              background-color: #1C2541 

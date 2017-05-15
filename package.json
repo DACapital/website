@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/DACapital/website#readme",
   "dependencies": {
+    "babel-plugin-css-modules-transform": "^1.2.7",
     "next": "^2.3.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "styled-components": "^2.0.0"
+    "styled-components": "^2.0.0",
+    "styled-components-tachyons": "^0.0.4",
+    "tachyons": "^4.7.2"
   }
 }
