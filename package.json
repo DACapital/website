@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "npm run tachyons; next",
     "tachyons": "tachyons tachyons/tachyons.css > static/tachyons.css",
-    "tachyons-min": "tachyons --minify tachyons/tachyons.css > static/tachyons.css",
-    "build": "npm run tachyons-min; next build",
+    "tachyons-min": "tachyons tachyons/tachyons.css > static/tachyons.css --minify",
+    "build": "next build",
     "start": "next start"
   },
   "repository": {
