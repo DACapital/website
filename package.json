@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/DACapital/website#readme",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-plugin-styled-components": "^1.1.4",
     "babel-preset-stage-0": "^6.24.1",
