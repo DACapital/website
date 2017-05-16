@@ -44,7 +44,7 @@ export default () => (
         </Title>
       </LogoContainer>
     </section>
-    <section className='w-100 fl space-shadow bg-white z-1 relative center pt4 pb7 lh-copy ph2'>
+    <section className='w-100 fl space-shadow bg-white z-1 relative center pv4 lh-copy ph2'>
       <section className='center mw7'>
         <article className='fl w-50-ns ph4'>
           <h2 className='lh-title'>
@@ -68,26 +68,28 @@ export default () => (
             Find out more in our <a href=''>whitepaper</a>.
           </p>
         </article>
-        <article className='fl center ph4 w-100 pv4'>
-          <h3 className='tc lh-title f3-ns'>
-            Subscribe to our mailing list:
-          </h3>
-          <div className='w5 center'>
-            <input
-              className='pa2 tc ba-30 f5 w5'
-              type='email'
-              name='email-address'
-              id='email-address'
-              placeholder='your@email.com'
-            />
-            <input
-              className='outline-0 hover-white w-100 mt3 b ph3 pv2 input-reset ba b--green bg-green white grow pointer f5 dib'
-              type='submit'
-              value='Subscribe'
-            />
-          </div>
-        </article>
       </section>
+    </section>
+    <section className='fl bg-green relative z-2 w-100 pv5 ph4'>
+      <article className='fl center ph4 w-100'>
+        <h3 className='tc white title f3-ns mt0'>
+          Subscribe to the mailing list:
+        </h3>
+        <div className='w5 center'>
+          <input
+            className='pa2 tc bg-white red f5 w5'
+            type='email'
+            name='email-address'
+            id='email-address'
+            placeholder='your@email.com'
+          />
+          <input
+            className='hover-white w-100 mt3 b pa2 input-reset ba b--green bg-blue white grow pointer f5 dib'
+            type='submit'
+            value='Subscribe'
+          />
+        </div>
+      </article>
     </section>
   </article>
 )
