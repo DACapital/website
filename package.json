@@ -1,0 +1,27 @@
+{
+  "name": "dac-website",
+  "version": "1.0.0",
+  "description": "DA.Capital Website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DACapital/website.git"
+  },
+  "author": "João Mesquita <jcsmesquita@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DACapital/website/issues"
+  },
+  "homepage": "https://github.com/DACapital/website#readme",
+  "dependencies": {
+    "next": "^2.3.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "styled-components": "^2.0.0"
+  }
+}
