@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "DA.Capital Website",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "npm run tachyons; next",
+    "tachyons": "tachyons tachyons/tachyons.css > static/tachyons.css",
+    "tachyons-min": "tachyons --minify tachyons/tachyons.css > static/tachyons.css",
+    "build": "npm run tachyons-min; next build",
     "start": "next start"
   },
   "repository": {
@@ -26,6 +28,6 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "styled-components": "^2.0.0",
-    "tachyons": "^4.7.2"
+    "tachyons-cli": "^1.0.11"
   }
 }
