@@ -23,9 +23,9 @@ export default class MyDocument extends Document {
               margin: 0px;
             }
             .space-shadow {
-              -webkit-box-shadow: inset 0px 4px 6px -1px rgba(28,37,65,0.65);
-              -moz-box-shadow: inset 0px 4px 6px -1px rgba(28,37,65,0.65);
-              box-shadow: inset 0px 4px 6px -1px rgba(28,37,65,0.65);
+              -webkit-box-shadow: inset 0px 0px 10px 0px rgba(28,37,65,0.65);
+              -moz-box-shadow: inset 0px 0px 10px 0px rgba(28,37,65,0.65);
+              box-shadow: inset 0px 0px 10px 0px rgba(28,37,65,0.65);
             }
           `}</style>
           {styleTags}

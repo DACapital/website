@@ -45,10 +45,10 @@ export default () => (
       { Stars.map(star => star) }
       <LogoContainer className='ph4 mw7 tc fixed z-0'>
         <Logo className='mw3 mw4-ns animated pulse infinite' src='/static/logo.png' />
-        <h1 className='center white mw7 relative fw6 mt4 avenir f5 f3-ns fw4 tracked lh-copy'>
+        <h1 className='center white mw7 relative ttu fw4 mt4 avenir f5 f3-ns tracked lh-copy'>
           The world’s first decentralized
           <br />
-          fund platform for Digital Assets is coming...
+          fund platform for Digital Assets is coming
         </h1>
       </LogoContainer>
     </SpaceBkg>
