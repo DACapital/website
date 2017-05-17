@@ -27,6 +27,10 @@ const LogoName = styled.img`
 const SpaceBkg = styled.section`
   background: #1C2541
 `
+const BotGuard = styled.div`
+  position: absolute;
+  left: -5000px;
+`
 
 const Stars = [
   <div className='z-0' id='stars'/>,
@@ -81,18 +85,31 @@ export default () => (
           Subscribe to the mailing list
         </Title>
         <div className='center tc'>
-          <input
-            className='pa3 tc bg-white blue f7 w-100 w5-ns ba b--blue'
-            type='email'
-            name='email-address'
-            id='email-address'
-            placeholder='your@email.com'
-          />
-          <input
-            className='b ttu mt4 mt0-ns outline-0 hover-white w-100 w4-ns pa3 dim ba b--blue bg-blue white pointer f7 dib'
-            type='submit'
-            value='Submit'
-          />
+          <form
+            action='//capital.us15.list-manage.com/subscribe/post?u=0a428990f1b06730570e4a6e2&amp;id=7f7d89e0a1'
+            method='post'
+            id='mc-embedded-subscribe-form'
+            name='mc-embedded-subscribe-form'
+            className='validate'
+            target='_blank'
+            novalidate
+          >
+            <input
+              className='pa3 tc bg-white blue f7 w-100 w5-ns ba b--blue'
+              type='email'
+              name='EMAIL'
+              id='mce-EMAIL'
+              placeholder='your@email.com'
+            />
+            <input
+              className='b ttu mt4 mt0-ns outline-0 hover-white w-100 w4-ns pa3 dim ba b--blue bg-blue white pointer f7 dib'
+              type='submit'
+              value='Submit'
+            />
+            <BotGuard aria-hidden='true'>
+              <input type='text' name='b_0a428990f1b06730570e4a6e2_7f7d89e0a1' tabindex='-1' value='' />
+            </BotGuard>
+          </form>
         </div>
       </article>
     </SpaceBkg>
