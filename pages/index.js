@@ -24,6 +24,10 @@ const Title = styled.h3`
 const LogoName = styled.img`
 `
 
+const SpaceBkg = styled.section`
+  background: #1C2541
+`
+
 const Stars = [
   <div className='z-0' id='stars'/>,
   <div className='z-0' id='stars2'/>,
@@ -32,7 +36,7 @@ const Stars = [
 
 export default () => (
   <article className=''>
-    <section className='vh-100 w-100 ph4'>
+    <SpaceBkg className='vh-100 w-100 ph4'>
       <LogoName className='h2 pv4 fl' src='/static/logo-name.png' />
       { Stars.map(star => star) }
       <LogoContainer className='ph4 mw7 tc fixed z-0'>
@@ -43,7 +47,7 @@ export default () => (
           fund platform for Digital Assets is coming...
         </h1>
       </LogoContainer>
-    </section>
+    </SpaceBkg>
     <section className='w-100 fl space-shadow bg-white z-1 relative center pv4 lh-copy'>
       <section className='center mw7'>
         <article className='fl w-50-ns ph4'>
@@ -59,7 +63,7 @@ export default () => (
         </article>
         <article className='fl w-50-ns ph4'>
           <h2 className='lh-title'>
-            Ethereum
+            Decentralized
           </h2>
           <p className='measure'>
             Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded.
@@ -70,8 +74,9 @@ export default () => (
         </article>
       </section>
     </section>
-    <section className='fl bg-green relative z-2 w-100 pv6 center'>
-      <article className='center ph4 w-100 mw7'>
+    <SpaceBkg className='fl relative z-2 w-100 center'>
+      { Stars.map(star => star) }
+      <article className='center ph4 w-100 mw7 mv7'>
         <Title className='center tc white title f3-ns mt0'>
           Subscribe to the mailing list
         </Title>
@@ -90,6 +95,6 @@ export default () => (
           />
         </div>
       </article>
-    </section>
+    </SpaceBkg>
   </article>
 )

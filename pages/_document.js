@@ -20,7 +20,6 @@ export default class MyDocument extends Document {
           <style>{`
             body {
               background-color: #1C2541;
-              background: radial-gradient(ellipse at bottom, black 0%, #1C2541 100%);
               margin: 0px;
             }
             .space-shadow {
