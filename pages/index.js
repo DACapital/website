@@ -76,7 +76,7 @@ export default () => (
     </section>
     <SpaceBkg className='fl relative z-2 w-100 center'>
       { Stars.map(star => star) }
-      <article className='center ph4 w-100 mw7 mv7'>
+      <article className='center ph4 w-100 mw7 mv6'>
         <Title className='center tc white title f3-ns mt0'>
           Subscribe to the mailing list
         </Title>
