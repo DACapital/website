@@ -40,7 +40,7 @@ export default () => (
         <h1 className='center white mw7 relative fw6 mt4 avenir f5 f3-ns fw4 tracked lh-copy'>
           The world’s first decentralized
           <br />
-          Index Funds for Blockchain Assets are coming.
+          fund platform for Digital Assets is coming...
         </h1>
       </LogoContainer>
     </section>
@@ -48,13 +48,13 @@ export default () => (
       <section className='center mw7'>
         <article className='fl w-50-ns ph4'>
           <h2 className='lh-title'>
-            Index Funds
+            Digital Asset Funds
           </h2>
           <p className='measure'>
-            In traditional markets, index funds provide investors with simple, cost-effective ways to gain diversified exposure in a portfolio of underlying assets.
+            In traditional stock markets, index funds provide investors with simple and cost-effective ways to gain a diversified exposure in a portfolio of underlying assets.
           </p>
           <p className='measure'>
-            We're creating the first decentralized, autonomous blockchain platform for blockchain specific index-funds.
+            We're creating the first decentralized, autonomous blockchain platform for digital asset based index funds.
           </p>
         </article>
         <article className='fl w-50-ns ph4'>
@@ -62,7 +62,7 @@ export default () => (
             Ethereum
           </h2>
           <p className='measure'>
-            Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed and traded.
+            Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded.
           </p>
           <p>
             Find out more in our <a href=''>whitepaper</a>.
