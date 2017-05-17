@@ -2,9 +2,10 @@
   "name": "dac-website",
   "version": "1.0.0",
   "description": "DA.Capital Website",
-  "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "npm run tachyons; next",
+    "tachyons": "tachyons tachyons/tachyons.css > static/tachyons.css",
+    "tachyons-min": "tachyons tachyons/tachyons.css > static/tachyons.css --minify",
     "build": "next build",
     "start": "next start"
   },
@@ -19,9 +20,14 @@
   },
   "homepage": "https://github.com/DACapital/website#readme",
   "dependencies": {
+    "animate.css": "^3.5.2",
+    "babel-plugin-css-modules-transform": "^1.2.7",
+    "babel-plugin-styled-components": "^1.1.4",
+    "babel-preset-stage-0": "^6.24.1",
     "next": "^2.3.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "styled-components": "^2.0.0"
+    "styled-components": "^2.0.0",
+    "tachyons-cli": "^1.0.11"
   }
 }
