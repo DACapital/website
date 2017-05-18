@@ -5,7 +5,9 @@ import {
   initAnalytics,
   logPageView
 } from '../utils/analytics'
-
+//
+// Styled Components
+//
 const LogoContainer = styled.div`
   top: 50%;
   left: 50%;
@@ -28,15 +30,19 @@ const BotGuard = styled.div`
   position: absolute;
   left: -5000px;
 `
-
 const Stars = [
   <div key='star1' className='z-0' id='stars' />,
   <div key='star2' className='z-0' id='stars2' />,
   <div key='star3' className='z-0' id='stars3' />
 ]
-
+//
+// Main Component
+//
 export default class Index extends Component {
   componentWillMount () {
+    //
+    // TODO: Don't initialize more than once when this is no longer an SPA
+    //
     initAnalytics()
     logPageView()
   }
@@ -77,7 +83,7 @@ export default class Index extends Component {
                 Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded.
               </p>
               <p>
-                Find out more in our <a href=''>whitepaper</a>.
+                Find out more in our <a target='_blank' href='https://drive.google.com/file/d/0B6ywOTtPtq_6T2hHOXB6dGlOOGM/view?usp=sharing'>whitepaper</a>.
               </p>
             </article>
           </section>
