@@ -77,7 +77,7 @@ export default class Index extends Component {
                 Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded.
               </p>
               <p>
-                Find out more in our <a href='https://drive.google.com/file/d/0B6ywOTtPtq_6T2hHOXB6dGlOOGM/view?usp=sharing'>whitepaper</a>.
+                Find out more in our <a target="_blank" href='https://drive.google.com/file/d/0B6ywOTtPtq_6T2hHOXB6dGlOOGM/view?usp=sharing'>whitepaper</a>.
               </p>
             </article>
           </section>
