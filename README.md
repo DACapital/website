@@ -21,4 +21,4 @@ Until CD is implemented, run this locally:
 ```
 yarn run deploy
 ```
-This will deploy to now and automatically setup domain aliases as per now.json
+This will deploy to now and automatically setup domain aliases as per now.json.
