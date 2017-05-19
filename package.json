@@ -7,7 +7,8 @@
     "tachyons": "tachyons tachyons/tachyons.css > static/tachyons.css",
     "tachyons-min": "tachyons tachyons/tachyons.css > static/tachyons.css --minify",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "now; now alias"
   },
   "repository": {
     "type": "git",

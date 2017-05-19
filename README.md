@@ -10,12 +10,12 @@ yarn
 
 # Development
 ```
-npm run dev
+yarn run dev
 ```
 
 # Deployment
-Deployments are made with [now](https://zeit.co/now).
 Until CD is implemented, run this locally:
 ```
-now; now alias
+yarn run deploy
 ```
+This will deploy to now and automatically setup domain aliases as per now.json
