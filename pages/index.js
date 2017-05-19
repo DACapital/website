@@ -6,6 +6,11 @@ import {
   logPageView
 } from '../utils/analytics'
 //
+// Local constants
+//
+const whitepaperLink = 'https://drive.google.com/file/d/0B6ywOTtPtq_6T2hHOXB6dGlOOGM/view?usp=sharing'
+const githubLink = 'https://github.com/dacapital'
+//
 // Styled Components
 //
 const LogoContainer = styled.div`
@@ -21,9 +26,7 @@ const Logo = styled.img`
 const Title = styled.h3`
   text-shadow: 1px 1px 1px ${constants.primary};
 `
-const LogoName = styled.img``
 const SpaceBkg = styled.section`
-
   background: #1C2541
 `
 const BotGuard = styled.div`
@@ -51,7 +54,35 @@ export default class Index extends Component {
     return (
       <article className=''>
         <SpaceBkg className='vh-100 w-100 ph4'>
-          <LogoName className='h2 pv4 fl' src='/static/logo-name.png' />
+          <header
+            className='h2 pv4'
+          >
+            <image
+              className='h2 fl'
+              src='/static/logo-name.png'
+            />
+            <div
+              className='h2 fr flex items-center'
+            >
+              <a
+                className='ml3 link dim white f7 f5-ns'
+                target='_blank'
+                href={whitepaperLink}
+              >
+                Whitepaper
+              </a>
+              <a
+                className='ml3 h2'
+                target='_blank'
+                href={githubLink}
+              >
+                <image
+                  className='h2'
+                  src='/static/github.png'
+                />
+              </a>
+            </div>
+          </header>
           { Stars.map(star => star) }
           <LogoContainer className='ph4 mw7 tc fixed z-0'>
             <Logo className='mw3 mw4-ns animated pulse infinite' src='/static/logo.png' />
@@ -83,7 +114,7 @@ export default class Index extends Component {
                 Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded.
               </p>
               <p>
-                Find out more in our <a target='_blank' href='https://drive.google.com/file/d/0B6ywOTtPtq_6T2hHOXB6dGlOOGM/view?usp=sharing'>whitepaper</a>.
+                Find out more in our <a target='_blank' href={whitepaperLink}>whitepaper</a>.
               </p>
             </article>
           </section>
@@ -117,7 +148,12 @@ export default class Index extends Component {
                   value='Submit'
                 />
                 <BotGuard aria-hidden='true'>
-                  <input type='text' name='b_0a428990f1b06730570e4a6e2_7f7d89e0a1' tabIndex='-1' value='' />
+                  <input
+                    type='text'
+                    name='b_0a428990f1b06730570e4a6e2_7f7d89e0a1'
+                    tabIndex='-1'
+                    value=''
+                  />
                 </BotGuard>
               </form>
             </div>
