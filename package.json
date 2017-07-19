@@ -8,7 +8,8 @@
     "tachyons-min": "tachyons tachyons/tachyons.css > static/tachyons.css --minify",
     "build": "next build",
     "start": "next start",
-    "deploy": "now; now alias"
+    "deploy": "now; now alias",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,10 @@
     "react-ga": "^2.2.0",
     "styled-components": "^2.0.0-17",
     "tachyons-cli": "^1.0.11"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1"
   }
 }

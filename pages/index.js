@@ -19,7 +19,7 @@ const LogoContainer = styled.div`
   transform: translateX(-50%) translateY(-50%);
   width: 100%;
 `
-const Logo = styled.img`
+export const Logo = styled.img`
   animation-duration: 2.1s;
   animation-timing-function: ease-in-out;
 `
