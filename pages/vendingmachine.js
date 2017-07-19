@@ -6,6 +6,7 @@ import VendingMachine from '../contracts/VendingMachine.json'
 import constants from '../config/constants'
 import { calcDacForEth, calcEthForDac } from '../utils/pricing'
 import ReactLoading from 'react-loading'
+import NoEthFound from '../components/noEthFound'
 var BigNumber = require('bignumber.js')
 const contract = require('truffle-contract')
 
@@ -74,6 +75,7 @@ export default class VendingMachineComponent extends Component {
   }
 
   updateBalance () {
+    console.log('updateBalance')
     const { deployedToken } = this.state
 
     return deployedToken.balanceOf.call(this.state.mainAccount)
@@ -84,6 +86,7 @@ export default class VendingMachineComponent extends Component {
   }
 
   loadContracts () {
+    console.log('loadContracts')
     const tokenContract = contract(DacToken)
     tokenContract.setProvider(this.state.web3.currentProvider)
 
@@ -122,6 +125,7 @@ export default class VendingMachineComponent extends Component {
   }
 
   handleEthInputChange (event) {
+    console.log('handleEthInputChange')
     const { deployedVendingMachine } = this.state
 
     // Get the value that was updated
@@ -177,6 +181,7 @@ export default class VendingMachineComponent extends Component {
   }
 
   handleDacInputChange (event) {
+    console.log('handleDacInputChange')
     const { deployedVendingMachine } = this.state
 
     // Get the value that was updated
@@ -327,9 +332,7 @@ export default class VendingMachineComponent extends Component {
 
             </article>
           ) : (
-            <article className='fl w-50-ns ph4 white' >
-              Please load metamask or ethereum provider.
-            </article>
+            <NoEthFound />
           )}
 
         </section>
