@@ -4,9 +4,12 @@ import getWeb3 from '../utils/getWeb3'
 import DacToken from '../contracts/DacToken.json'
 import VendingMachine from '../contracts/VendingMachine.json'
 import constants from '../config/constants'
+import { calcDacForEth, calcEthForDac } from '../utils/pricing'
 import ReactLoading from 'react-loading'
 var BigNumber = require('bignumber.js')
 const contract = require('truffle-contract')
+
+const MAX_TOKENS = new BigNumber(16800000).times(Math.pow(10, 18))
 
 //
 // Styled Components
@@ -132,16 +135,38 @@ export default class VendingMachineComponent extends Component {
       })
     }
 
+    // Bail if it is not a number
+    if (isNaN(eth)) {
+      return
+    }
+
+    // Check decimal place length
+    let ethBN = new BigNumber(eth)
+    if (ethBN.decimalPlaces() > 18) {
+      return
+    }
+
     // Calculate the wei value
-    let wei = new BigNumber(eth).times(Math.pow(10, 18))
+    let wei = ethBN.times(Math.pow(10, 18))
 
     return deployedVendingMachine.amountSold.call()
     .then((sold) => {
-      return deployedVendingMachine.calculateSaleAmount.call(sold, wei)
-    }).then((dacAmount) => {
+      let dacAmount = calcDacForEth(sold, wei)
+
+      // Check to see if the limit has been reached
+      if (dacAmount.plus(sold).greaterThan(MAX_TOKENS)) {
+        // Get the amount of dac that is left
+        let leftInVendingMachine = MAX_TOKENS.sub(sold)
+
+        // Calculate the eth price and update vals
+        eth = calcEthForDac(sold, leftInVendingMachine).dividedBy(Math.pow(10, 18))
+        dacAmount = leftInVendingMachine
+      }
+
       console.log('dacAmount: ' + dacAmount)
       console.log('eth: ' + eth)
       console.log('wei: ' + wei)
+
       // Set the current price
       return this.setState({
         tokenPrice: new BigNumber(dacAmount).dividedBy(new BigNumber(eth)),
@@ -152,7 +177,59 @@ export default class VendingMachineComponent extends Component {
   }
 
   handleDacInputChange (event) {
-    this.setState({ethToSpend: '100', dacToBuy: event.target.value})
+    const { deployedVendingMachine } = this.state
+
+    // Get the value that was updated
+    let dacString = event.target.value
+
+    // Check to see if it is empty
+    if (!dacString) {
+      return this.setState({
+        ethToSpend: '',
+        dacToBuy: ''
+      })
+    }
+
+    // Bail if it is not a number
+    if (isNaN(dacString)) {
+      return
+    }
+
+    // Check decimal place length
+    let dacBN = new BigNumber(dacString)
+    if (dacBN.decimalPlaces() > 18) {
+      return
+    }
+
+    // Calculate the base unit value
+    let dacBaseUnits = dacBN.times(Math.pow(10, 18))
+
+    return deployedVendingMachine.amountSold.call()
+    .then((sold) => {
+      let ethAmount = calcEthForDac(sold, dacBaseUnits)
+
+      // Check to see if the limit has been reached
+      if (dacBaseUnits.plus(sold).greaterThan(MAX_TOKENS)) {
+        // Get the amount of dac that is left
+        let leftInVendingMachine = MAX_TOKENS.sub(sold)
+
+        // Calculate the eth price and update vals
+        ethAmount = calcEthForDac(sold, leftInVendingMachine)
+        dacBaseUnits = leftInVendingMachine
+        dacString = dacBaseUnits.dividedBy(Math.pow(10, 18)).toFormat()
+      }
+
+      console.log('ethAmount: ' + ethAmount)
+      console.log('dacBaseUnits: ' + dacBaseUnits)
+      console.log('dacBaseUnits: ' + dacBaseUnits)
+
+      // Set the current price
+      return this.setState({
+        tokenPrice: new BigNumber(dacBaseUnits).times(Math.pow(10, 18)).dividedBy(new BigNumber(ethAmount)),
+        ethToSpend: new BigNumber(ethAmount).dividedBy(Math.pow(10, 18)).toFormat(),
+        dacToBuy: dacString
+      })
+    })
   }
 
   purchaseClicked (e) {

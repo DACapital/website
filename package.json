@@ -8,7 +8,8 @@
     "tachyons-min": "tachyons tachyons/tachyons.css > static/tachyons.css --minify",
     "build": "next build",
     "start": "next start",
-    "deploy": "now; now alias"
+    "deploy": "now; now alias",
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,14 @@
     "tachyons-cli": "^1.0.11",
     "truffle-contract": "^2.0.1",
     "web3": "^0.19.1"
+  },
+  "devDependencies": {
+    "ava": "^0.21.0"
+  },
+  "ava": {
+		"files": [
+			"**/*.test.js"
+    ],
+    "babel": "inherit"
   }
 }
