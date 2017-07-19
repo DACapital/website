@@ -19,7 +19,7 @@ const LogoContainer = styled.div`
   transform: translateX(-50%) translateY(-50%);
   width: 100%;
 `
-const Logo = styled.img`
+export const Logo = styled.img`
   animation-duration: 2.1s;
   animation-timing-function: ease-in-out;
 `
@@ -86,34 +86,38 @@ export default class Index extends Component {
           { Stars.map(star => star) }
           <LogoContainer className='ph4 mw7 tc fixed z-0'>
             <Logo className='mw3 mw4-ns animated pulse infinite' src='/static/logo.png' />
-            <h1 className='center white mw7 relative ttu fw4 mt4 avenir f5 f3-ns tracked lh-copy'>
-              The world’s first decentralized
+            <h1 className='center white mw7 relative fw3 mt4 avenir f5 f3-ns tracked lh-copy'>
+              A decentralized autonomous platform for
               <br />
-              fund platform for Digital Assets is coming
+              digital asset index funds
             </h1>
           </LogoContainer>
         </SpaceBkg>
         <section className='w-100 fl space-shadow bg-white z-1 relative center pv4 lh-copy'>
           <section className='center mw7'>
             <article className='fl w-50-ns ph4'>
-              <h2 className='lh-title'>
-                Digital Asset Funds
-              </h2>
-              <p className='measure'>
-                In traditional stock markets, index funds provide investors with simple and cost-effective ways to gain a diversified exposure in a portfolio of underlying assets.
-              </p>
-              <p className='measure'>
-                We're creating the first decentralized, autonomous blockchain platform for digital asset based index funds.
-              </p>
+              <image
+                className=''
+                src='/static/platform_demo_1.png'
+              />
             </article>
             <article className='fl w-50-ns ph4'>
-              <h2 className='lh-title'>
+              <h2 className='lh-title fw6'>
+                Digital Asset Index Funds
+              </h2>
+              <p className='measure fw3'>
+                In traditional stock markets, index funds provide investors with simple and cost-effective ways to gain a diversified exposure in a portfolio of underlying assets.
+              </p>
+              <p className='measure fw3'>
+                We're creating the first decentralized, autonomous blockchain platform for digital asset based index funds.
+              </p>
+              <h2 className='lh-title fw6'>
                 Decentralized
               </h2>
-              <p className='measure'>
-                Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded.
+              <p className='measure fw3'>
+                Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded without any intermediaries.
               </p>
-              <p>
+              <p className='fw3'>
                 Find out more in our <a target='_blank' href={whitepaperLink}>whitepaper</a>.
               </p>
             </article>
@@ -122,7 +126,7 @@ export default class Index extends Component {
         <SpaceBkg className='fl relative z-2 w-100 center'>
           { Stars.map(star => star) }
           <article className='center ph4 w-100 mw7 mv6'>
-            <Title className='center tc white title f3-ns mt0'>
+            <Title className='center fw3 tc white title f3-ns mt0'>
               Subscribe to the mailing list
             </Title>
             <div className='center tc'>

@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing App shows "Hello world!" 1`] = `
+<article
+  className=""
+>
+  <section
+    className="vh-100 w-100 ph4 s1kenwwu-3 cpETWb"
+  >
+    <header
+      className="h2 pv4"
+    >
+      <image
+        className="h2 fl"
+        src="/static/logo-name.png"
+      />
+      <div
+        className="h2 fr flex items-center"
+      >
+        <a
+          className="ml3 link dim white f7 f5-ns"
+          href="https://drive.google.com/file/d/0B6ywOTtPtq_6T2hHOXB6dGlOOGM/view?usp=sharing"
+          target="_blank"
+        >
+          Whitepaper
+        </a>
+        <a
+          className="ml3 h2"
+          href="https://github.com/dacapital"
+          target="_blank"
+        >
+          <image
+            className="h2"
+            src="/static/github.png"
+          />
+        </a>
+      </div>
+    </header>
+    <div
+      className="z-0"
+      id="stars"
+    />
+    <div
+      className="z-0"
+      id="stars2"
+    />
+    <div
+      className="z-0"
+      id="stars3"
+    />
+    <div
+      className="ph4 mw7 tc fixed z-0 s1kenwwu-0 gbvHeC"
+    >
+      <img
+        className="mw3 mw4-ns animated pulse infinite s1kenwwu-1 fTkMmT"
+        src="/static/logo.png"
+      />
+      <h1
+        className="center white mw7 relative fw3 mt4 avenir f5 f3-ns tracked lh-copy"
+      >
+        A decentralized autonomous platform for
+        <br />
+        digital asset index funds
+      </h1>
+    </div>
+  </section>
+  <section
+    className="w-100 fl space-shadow bg-white z-1 relative center pv4 lh-copy"
+  >
+    <section
+      className="center mw7"
+    >
+      <article
+        className="fl w-50-ns ph4"
+      >
+        <image
+          className=""
+          src="/static/platform_demo_1.png"
+        />
+      </article>
+      <article
+        className="fl w-50-ns ph4"
+      >
+        <h2
+          className="lh-title fw6"
+        >
+          Digital Asset Index Funds
+        </h2>
+        <p
+          className="measure fw3"
+        >
+          In traditional stock markets, index funds provide investors with simple and cost-effective ways to gain a diversified exposure in a portfolio of underlying assets.
+        </p>
+        <p
+          className="measure fw3"
+        >
+          We're creating the first decentralized, autonomous blockchain platform for digital asset based index funds.
+        </p>
+        <h2
+          className="lh-title fw6"
+        >
+          Decentralized
+        </h2>
+        <p
+          className="measure fw3"
+        >
+          Our platform is built with smart contracts on the Ethereum blockchain. It enables funds of ERC20 tokens to be created, managed, and traded without any intermediaries.
+        </p>
+        <p
+          className="fw3"
+        >
+          Find out more in our 
+          <a
+            href="https://drive.google.com/file/d/0B6ywOTtPtq_6T2hHOXB6dGlOOGM/view?usp=sharing"
+            target="_blank"
+          >
+            whitepaper
+          </a>
+          .
+        </p>
+      </article>
+    </section>
+  </section>
+  <section
+    className="fl relative z-2 w-100 center s1kenwwu-3 cpETWb"
+  >
+    <div
+      className="z-0"
+      id="stars"
+    />
+    <div
+      className="z-0"
+      id="stars2"
+    />
+    <div
+      className="z-0"
+      id="stars3"
+    />
+    <article
+      className="center ph4 w-100 mw7 mv6"
+    >
+      <h3
+        className="center fw3 tc white title f3-ns mt0 s1kenwwu-2 egBFKG"
+      >
+        Subscribe to the mailing list
+      </h3>
+      <div
+        className="center tc"
+      >
+        <form
+          action="//capital.us15.list-manage.com/subscribe/post?u=0a428990f1b06730570e4a6e2&id=7f7d89e0a1"
+          className="validate"
+          id="mc-embedded-subscribe-form"
+          method="post"
+          name="mc-embedded-subscribe-form"
+          noValidate={true}
+          target="_blank"
+        >
+          <input
+            className="pa3 tc bg-white blue f7 w-100 w5-ns ba b--blue"
+            id="mce-EMAIL"
+            name="EMAIL"
+            placeholder="your@email.com"
+            type="email"
+          />
+          <input
+            className="b ttu mt4 mt0-ns outline-0 hover-white w-100 w4-ns pa3 dim ba b--blue bg-blue white pointer f7 dib"
+            type="submit"
+            value="Submit"
+          />
+          <div
+            aria-hidden="true"
+            className="s1kenwwu-4 hDaGym"
+          >
+            <input
+              name="b_0a428990f1b06730570e4a6e2_7f7d89e0a1"
+              tabIndex="-1"
+              type="text"
+              value=""
+            />
+          </div>
+        </form>
+      </div>
+    </article>
+  </section>
+</article>
+`;

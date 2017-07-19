@@ -36,7 +36,7 @@ export default class NoEthFound extends Component {
               <h5>Browse to this page in Mist</h5>
             </div>
           </div>
-          Please load Metamask or other Ethereum provider.
+          Please load an Ethereum provider.
         </div>
       </article>
     )

@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "deploy": "now; now alias",
-    "test": "ava"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -32,17 +32,11 @@
     "react-ga": "^2.2.0",
     "react-loading": "^0.1.4",
     "styled-components": "^2.0.0-17",
-    "tachyons-cli": "^1.0.11",
-    "truffle-contract": "^2.0.1",
-    "web3": "^0.19.1"
+    "tachyons-cli": "^1.0.11"
   },
   "devDependencies": {
-    "ava": "^0.21.0"
-  },
-  "ava": {
-		"files": [
-			"**/*.test.js"
-    ],
-    "babel": "inherit"
+    "enzyme": "^2.9.1",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1"
   }
 }
