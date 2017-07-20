@@ -32,7 +32,8 @@
     "react-ga": "^2.2.0",
     "react-loading": "^0.1.4",
     "styled-components": "^2.0.0-17",
-    "tachyons-cli": "^1.0.11"
+    "tachyons-cli": "^1.0.11",
+    "truffle-contract": "^2.0.1"
   },
   "devDependencies": {
     "enzyme": "^2.9.1",

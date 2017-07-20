@@ -7,6 +7,7 @@ import constants from '../config/constants'
 import { calcDacForEth, calcEthForDac } from '../utils/pricing'
 import ReactLoading from 'react-loading'
 import NoEthFound from '../components/noEthFound'
+import NoContractFound from '../components/noContractFound'
 var BigNumber = require('bignumber.js')
 const contract = require('truffle-contract')
 
@@ -50,7 +51,8 @@ export default class VendingMachineComponent extends Component {
       web3: null,
       deployedToken: null,
       deployedVendingMachine: null,
-      pendingTrx: false
+      pendingTrx: false,
+      errorLoading: false
     }
   }
 
@@ -120,6 +122,9 @@ export default class VendingMachineComponent extends Component {
       }).then((price) => {
         // Set the current price
         return this.setState({ tokenPrice: price })
+      }).catch((err) => {
+        console.log(err)
+        this.setState({ errorLoading: true })
       })
     })
   }
@@ -264,7 +269,8 @@ export default class VendingMachineComponent extends Component {
       tokenPrice,
       pendingTrx,
       ethToSpend,
-      dacToBuy
+      dacToBuy,
+      errorLoading
     } = this.state
 
     return (
@@ -298,40 +304,45 @@ export default class VendingMachineComponent extends Component {
           </LogoContainer>
         </section>
         <section className='w-70 space-shadow bg-white relative center pv1 lh-copy avenir'>
-          { web3 ? (
-            <article className='w-80-ns ph4  center' >
+          { web3
+            ? errorLoading
+              ? (
+                <NoContractFound />
+                )
+              : (
+                <article className='w-80-ns ph4  center' >
 
-              <div className='tc'>
-                <h2 className='tc'>
-                  Amount
-                </h2>
-                <div>
-                  <div className='fl w-50 pb2'>
-                    <img className='h3' src='/static/ethereum.png' />
+                  <div className='tc'>
+                    <h1 className='tc'>
+                      Purchase Amount
+                    </h1>
+                    <div>
+                      <div className='fl w-50 pb2'>
+                        <img className='h3' src='/static/ethereum.png' />
+                      </div>
+                      <div className='fl w-50 pb2'>
+                        <img className='h3' src='/static/logo.png' />
+                      </div>
+                    </div>
+                    <div className='tc pb4'>
+                      <input type='text' className='input-reset h3 br2 ba b--black-20 pa2 mb2 w-40' name='numberoftokens' placeholder='ETH' value={ethToSpend} onChange={(e) => this.handleEthInputChange(e)} disabled={pendingTrx ? 'disabled' : ''} />
+                      <img className='v-mid pa1' src='/static/transfer.png' />
+                      <input type='text' className='input-reset h3 br2 ba b--black-20 pa2 mb2 w-40' name='numberoftokens' placeholder='DAC' value={dacToBuy} onChange={(e) => this.handleDacInputChange(e)} disabled={pendingTrx ? 'disabled' : ''} />
+                    </div>
+
+                    <PurchaseButton className='h3 f4 inline-flex justify-center items-center link dim br2 ph3 mb2 dib white bg-blue w-60 ' href='#0' onClick={(e) => this.purchaseClicked(e)} disabled={pendingTrx}>
+                        Purchase DAC Tokens
+                    </PurchaseButton>
+                    {
+                      pendingTrx
+                      ? <ReactLoading type='bars' className='center' color={constants.secondary} />
+                      : null
+                    }
+
                   </div>
-                  <div className='fl w-50 pb2'>
-                    <img className='h3' src='/static/logo.png' />
-                  </div>
-                </div>
-                <div className='tc pb4'>
-                  <input type='text' className='input-reset h3 br2 ba b--black-20 pa2 mb2 w-40' name='numberoftokens' placeholder='ETH' value={ethToSpend} onChange={(e) => this.handleEthInputChange(e)} disabled={pendingTrx ? 'disabled' : ''} />
-                  <img className='v-mid pa1' src='/static/transfer.png' />
-                  <input type='text' className='input-reset h3 br2 ba b--black-20 pa2 mb2 w-40' name='numberoftokens' placeholder='DAC' value={dacToBuy} onChange={(e) => this.handleDacInputChange(e)} disabled={pendingTrx ? 'disabled' : ''} />
-                </div>
-
-                <PurchaseButton className='h3 f4 inline-flex justify-center items-center link dim br2 ph3 mb2 dib white bg-blue w-60 ' href='#0' onClick={(e) => this.purchaseClicked(e)} disabled={pendingTrx}>
-                  Purchase DAC Tokens
-                </PurchaseButton>
-                {
-                  pendingTrx
-                  ? <ReactLoading type='bars' className='center' color={constants.secondary} />
-                  : null
-                }
-
-              </div>
-
-            </article>
-          ) : (
+                </article>
+              )
+          : (
             <NoEthFound />
           )}
 
